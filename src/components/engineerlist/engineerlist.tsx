@@ -43,12 +43,16 @@ const EngineerList = () => {
     //onload
     useEffect(() => {
       async function loadData(savedData: any) {
+        console.log("outside");
         if (savedData) {
+          console.log("inside first if"+savedData);
           if (savedData.getAllbuttonClick === 'getall') {
+            console.log("inside second if"+savedData);
             const reSave:any = await getAllEngineer(navigate);
             setData(reSave);
             console.log(reSave);
           }else if (savedData.getAllbuttonClick === 'search'){
+            console.log("inside else if"+savedData);
             setValue("jpLevel", savedData.jpLevel);
             setValue("expOver", savedData.expOver);
             setValue("expUnder", savedData.expUnder);
