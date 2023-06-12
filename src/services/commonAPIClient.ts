@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { removeCookie } from '../util/cookieService';
 import { RouterPath } from '../util/enum/Enum';
-let baseUrl: string = 'https://latestbackend-bnz99ao4w-skillset.vercel.app/';
+let baseUrl: string = 'https://latestbackend.vercel.app';
 
 
 export async function httpGet(navigate: any, path: string) {
