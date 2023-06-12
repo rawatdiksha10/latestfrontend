@@ -23,19 +23,15 @@ function Login(props:any) {
     }else{
        
       let user:any = await login(navigate, data);
-      console.log("oustide");
 
       if(user.role===Role.Admin){
-        console.log("in if");
         setCookie("sv", user.sessionId);
         navigate(RouterPath.EngineerList);
 
       }else if(user.role===Role.Engineer){
-        console.log("in else if");
         setCookie("sv", user.sessionId);
         navigate(RouterPath.MyPage);  
       }else{
-        console.log("in else");
         setError("userid", { type:"manual", message:"ユーザー ID、パスワードが間違っています。" });
       } 
     }      
